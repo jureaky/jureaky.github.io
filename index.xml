@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Teclip by Jureaky</title>
+        <link>https://jureaky.github.io/</link>
+        <description>Tech Clips</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>jureaky@gmail.com (jureaky)</managingEditor>
+            <webMaster>jureaky@gmail.com (jureaky)</webMaster><lastBuildDate>Thu, 30 Apr 2020 21:15:39 &#43;0900</lastBuildDate><atom:link href="https://jureaky.github.io/" rel="self" type="application/rss+xml" /><item>
+                <title>Create a Github Blog With Hugo</title>
+                <link>https://jureaky.github.io/create-a-github-blog-with-hugo/</link>
+                <pubDate>Thu, 30 Apr 2020 21:15:39 &#43;0900</pubDate>
+                <author>jureaky</author>
+                <guid>https://jureaky.github.io/create-a-github-blog-with-hugo/</guid>
+                <description>Figure out How I created this blog using Hugo.</description>
+            </item></channel>
+</rss>
