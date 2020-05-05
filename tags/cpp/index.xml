@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Cpp | Tag | Teclip by Jureaky</title>
+        <link>https://jureaky.github.io/tags/cpp/</link>
+        <description>Cpp | Tag | Teclip by Jureaky</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>jureaky@gmail.com (jureaky)</managingEditor>
+            <webMaster>jureaky@gmail.com (jureaky)</webMaster><lastBuildDate>Wed, 06 May 2020 02:45:20 &#43;0900</lastBuildDate><atom:link href="https://jureaky.github.io/tags/cpp/" rel="self" type="application/rss+xml" /><item>
+                <title>References in C&#43;&#43;</title>
+                <link>https://jureaky.github.io/references-in-cplusplus/</link>
+                <pubDate>Wed, 06 May 2020 02:45:20 &#43;0900</pubDate>
+                <author>jureaky</author>
+                <guid>https://jureaky.github.io/references-in-cplusplus/</guid>
+                <description>What is a reference(&amp;amp;) in C&#43;&#43;?</description>
+            </item></channel>
+</rss>

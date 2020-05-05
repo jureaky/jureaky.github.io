@@ -4,7 +4,14 @@
         <link>https://jureaky.github.io/</link>
         <description>Tech Clips</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>jureaky@gmail.com (jureaky)</managingEditor>
-            <webMaster>jureaky@gmail.com (jureaky)</webMaster><lastBuildDate>Thu, 30 Apr 2020 21:15:39 &#43;0900</lastBuildDate><atom:link href="https://jureaky.github.io/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>jureaky@gmail.com (jureaky)</webMaster><lastBuildDate>Wed, 06 May 2020 02:45:20 &#43;0900</lastBuildDate><atom:link href="https://jureaky.github.io/" rel="self" type="application/rss+xml" /><item>
+                <title>References in C&#43;&#43;</title>
+                <link>https://jureaky.github.io/references-in-cplusplus/</link>
+                <pubDate>Wed, 06 May 2020 02:45:20 &#43;0900</pubDate>
+                <author>jureaky</author>
+                <guid>https://jureaky.github.io/references-in-cplusplus/</guid>
+                <description>What is a reference(&amp;amp;) in C&#43;&#43;?</description>
+            </item><item>
                 <title>Create a Github Blog With Hugo</title>
                 <link>https://jureaky.github.io/create-a-github-blog-with-hugo/</link>
                 <pubDate>Thu, 30 Apr 2020 21:15:39 &#43;0900</pubDate>

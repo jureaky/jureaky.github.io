@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>References in C&#43;&#43; | Teclip by Jureaky</title>
+        <meta name="Description" content="Tech Clips"><meta property="og:title" content="References in C&#43;&#43;" />
+<meta property="og:description" content="What is a reference(&amp;) in C&#43;&#43;?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jureaky.github.io/references-in-cplusplus/" />
+<meta property="article:published_time" content="2020-05-06T02:45:20+09:00" />
+<meta property="article:modified_time" content="2020-05-06T02:45:20+09:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="References in C&#43;&#43;"/>
+<meta name="twitter:description" content="What is a reference(&amp;) in C&#43;&#43;?"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://jureaky.github.io/references-in-cplusplus/" /><link rel="prev" href="https://jureaky.github.io/create-a-github-blog-with-hugo/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "References in C++",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/jureaky.github.io\/references-in-cplusplus\/"
+        },"image": {
+                "@type": "ImageObject",
+                "url": "https:\/\/jureaky.github.io\/cover.png",
+                "width":  800 ,
+                "height":  600 
+            },"genre": "posts","keywords": "Cpp","wordcount":  1327 ,
+        "url": "https:\/\/jureaky.github.io\/references-in-cplusplus\/","datePublished": "2020-05-06T02:45:20+09:00","dateModified": "2020-05-06T02:45:20+09:00","publisher": {
+                "@type": "Organization",
+                "name": "xxxx",
+                "logo": {
+                "@type": "ImageObject",
+                "url": "https:\/\/jureaky.github.io\/logo.png",
+                "width":  127 ,
+                "height":  40 
+                }
+            },"author": {
+                "@type": "Person",
+                "name": "jureaky"
+            },"description": ""
+    }
+    </script></head>
+    <body><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Teclip by Jureaky">Teclip by Jureaky</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Teclip by Jureaky">Teclip by Jureaky</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">References in C&#43;&#43;</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>jureaky</a></span>&nbsp;
+                    <span class="post-category">included in<a href="/categories/lang/">
+                                <i class="far fa-folder fa-fw"></i>Lang
+                            </a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-05-06>2020-05-06</time>&nbsp;
+                <i class="fas fa-pencil-alt fa-fw"></i>about 1327 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>7 min&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading/normal.min.svg"
+        data-sizes="auto"
+        data-srcset="/images/references-in-cplusplus/featured-img.png, /images/references-in-cplusplus/featured-img.png 1.5x, /images/references-in-cplusplus/featured-img.png 2x"
+        data-src="/images/references-in-cplusplus/featured-img.png"
+        alt="/images/references-in-cplusplus/featured-img.png"
+        title="/images/references-in-cplusplus/featured-img.png" /></div><div class="details toc" id="toc-static">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-concept-of-a-reference-in-c">1 Concept of a Reference in C++</a></li>
+    <li><a href="#2-uses-of-references">2 Uses of References</a>
+      <ul>
+        <li><a href="#simple-alias">Simple Alias</a></li>
+        <li><a href="#function-parameters">Function Parameters</a></li>
+      </ul>
+    </li>
+    <li><a href="#3-references-vs-pointers">3 References vs Pointers</a>
+      <ul>
+        <li><a href="#allowing-null-values">Allowing NULL values</a></li>
+        <li><a href="#memory-allocation">Memory allocation</a></li>
+        <li><a href="#reassigning-reference">Reassigning reference</a></li>
+      </ul>
+    </li>
+    <li><a href="#4-const-references">4 Const References</a></li>
+    <li><a href="#5-r-value-references-c11">5 R-value References (C++11)</a>
+      <ul>
+        <li><a href="#l-value-and-r-value">L-value and R-value</a></li>
+        <li><a href="#referencing-temporary-values">Referencing temporary values</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="1-concept-of-a-reference-in-c">1 Concept of a Reference in C++</h2>
+<p>A <strong>Reference</strong> is a new name(alias) for another existing object or variable. And, as the name suggests, it is a <em>pointer</em> internally.</p>
+<p>Reference is declared as:</p>
+<p><code>&lt;type&gt;&amp; &lt;name&gt; = &lt;referenced_variable&gt;</code></p>
+<p>Like pointer symbol(<code>*</code>), reference symbol(<code>&amp;</code>) can be placed anywhere between <code>&lt;type&gt;</code> and <code>&lt;name&gt;</code>.</p>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>Note<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ol>
+<li>
+<p>Note that references <strong>must be initialized</strong> when they are created. References without objects to reference do not make sense.</p>
+</li>
+<li>
+<p><strong>NULL reference</strong> does not exist.</p>
+</li>
+<li>
+<p>Cannot reference to constants. Like pointers cannot.(We need <code>const</code> keyword for this, sometimes called const references)</p>
+</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="kt">int</span><span class="o">&amp;</span> <span class="n">ref1</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span> <span class="c1">// O
+</span><span class="c1"></span>
+<span class="kt">int</span><span class="o">&amp;</span> <span class="n">ref2</span> <span class="o">=</span> <span class="nb">NULL</span> <span class="c1">// X
+</span><span class="c1"></span>
+<span class="k">const</span> <span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<span class="kt">int</span><span class="o">&amp;</span> <span class="n">ref3</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span> <span class="c1">// X
+</span><span class="c1"></span><span class="kt">int</span><span class="o">&amp;</span> <span class="n">ref4</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span> <span class="c1">// X
+</span></code></pre></td></tr></table>
+</div>
+</div></div>
+        </div>
+    </div>
+<hr>
+<h2 id="2-uses-of-references">2 Uses of References</h2>
+<h3 id="simple-alias">Simple Alias</h3>
+<p>References are pointers(of course they don&rsquo;t look like pointers) referring to the exact same object initialized with. References act like the referenced variables but only with different names.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">data</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="kt">int</span><span class="o">&amp;</span> <span class="n">rData</span> <span class="o">=</span> <span class="n">data</span><span class="p">;</span>
+    
+    <span class="n">rData</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span> <span class="c1">// same as data = 20;
+</span><span class="c1"></span>    
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;data: &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">data</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;rData: &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">rData</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>The result is:</p>
+<div class="details admonition quote open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-quote-right fa-fw"></i>Execution Result<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>data: 20</p>
+<p>rData: 20</p>
+</div>
+        </div>
+    </div>
+<h3 id="function-parameters">Function Parameters</h3>
+<p>It is very common that references are used as function parameters.</p>
+<p>When an argument is not passed as a reference, the copy of the argument is made, and the function deals with the copied value.</p>
+<p>However, in this case, passing argument as a reference makes us modify the original value directly.</p>
+<p>Also, if the size of the argument is big(like an array), it is efficient to use a reference as no copy of the big data happens.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="kt">void</span> <span class="nf">increase</span><span class="p">(</span><span class="kt">int</span><span class="o">&amp;</span> <span class="n">value</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">value</span><span class="o">++</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">data</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="n">increase</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+    <span class="c1">// increase(&amp;data) Wrong!
+</span><span class="c1"></span>    
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;data: &#34;</span> <span class="o">&lt;&lt;</span> <span class="n">data</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>The result is:</p>
+<div class="details admonition quote open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-quote-right fa-fw"></i>Execution Result<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">data: 11</div>
+        </div>
+    </div>
+<div class="details admonition warning open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-exclamation-triangle fa-fw"></i>Warning<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>Passing constant argument to <code>increase()</code> function like <code>increase(10)</code> will generate a compile error.</p>
+<p>The reason is that reference can&rsquo;t refer to contant value.</p>
+<p>To avoid this, we use const reference, which will be described below of this article.</p>
+</div>
+        </div>
+    </div>
+<hr>
+<h2 id="3-references-vs-pointers">3 References vs Pointers</h2>
+<p>References can be thought of as pointers with more restrictive power. For example, the first example can be substitued using pointer like:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#inlcude &lt;iostream&gt;
+</span><span class="cp"></span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">data</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="kt">int</span><span class="o">*</span> <span class="n">pData</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">data</span><span class="p">;</span>
+    <span class="o">*</span><span class="n">pData</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Then, why do we need references?</p>
+<p>Actually, references are recommended in most cases because those restrictions prevent people from certain dangers of using pointers.</p>
+<div class="tenor-gif-embed" data-postid="4050585" data-share-method="host" data-width="100%" data-aspect-ratio="2.4057971014492754"><a href="https://tenor.com/view/spiderman-uncle-ben-power-responsiblity-movie-quotes-gif-4050585">With Great Power Comes Great Responsibility GIF</a> from <a href="https://tenor.com/search/spiderman-gifs">Spiderman GIFs</a></div><script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+<p>Below are some of significant differences between References and Pointers.</p>
+<h3 id="allowing-null-values">Allowing NULL values</h3>
+<p>Like said above, a reference can&rsquo;t have NULL value.</p>
+<h3 id="memory-allocation">Memory allocation</h3>
+<p>Pointer itself is allocated a memory address, and stores the memory address of the variable it points.</p>
+<p>However, reference shares the same memory address with the original variable(Of course it should also have memory address in low level).</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">data</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+
+    <span class="kt">int</span><span class="o">*</span> <span class="n">pData</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">data</span><span class="p">;</span>
+    <span class="kt">int</span><span class="o">&amp;</span> <span class="n">rData</span> <span class="o">=</span> <span class="n">data</span><span class="p">;</span>
+
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;addr of data: &#34;</span> <span class="o">&lt;&lt;</span> <span class="o">&amp;</span><span class="n">data</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;addr of pData: &#34;</span> <span class="o">&lt;&lt;</span> <span class="o">&amp;</span><span class="n">pData</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&#34;addr of rData: &#34;</span> <span class="o">&lt;&lt;</span> <span class="o">&amp;</span><span class="n">rData</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+    
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>The result is:</p>
+<div class="details admonition quote open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-quote-right fa-fw"></i>Execution Result<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>addr of data: 010FFE80</p>
+<p>addr of pData: 010FFE74</p>
+<p>addr of rData: 010FFE80</p>
+</div>
+        </div>
+    </div>
+<h3 id="reassigning-reference">Reassigning reference</h3>
+<p>Once a reference is initialized, this reference can&rsquo;t change.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">num1</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">num2</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+    <span class="kt">int</span><span class="o">&amp;</span> <span class="n">rNum1</span> <span class="o">=</span> <span class="n">num1</span><span class="p">;</span>
+    <span class="n">rNum1</span> <span class="o">=</span> <span class="n">num2</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>This code changes the value of num1 from 10 to the value of num2(20). Once <code>rNum1</code> variable refers to <code>num1</code>, it doesn&rsquo;t change.</p>
+<p>However, for the case of pointers, it is possible to change where it points.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span> <span class="n">num1</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">num2</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+    
+    <span class="kt">int</span><span class="o">*</span> <span class="n">pNum1</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">num1</span><span class="p">;</span>
+    <span class="n">pNum1</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">num2</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Pointer variable <code>pNum1</code> now points <code>num2</code>. Now we can see something is wrong. In some cases this can be critical. To prevent this, use reference or <code>const</code> keyword. After all, <code>int&amp; rNum1</code> can be regarded as <code>int* const pNum1</code>.</p>
+<hr>
+<h2 id="4-const-references">4 Const References</h2>
+<p>It seems like reference covers all the pointer&rsquo;s problem, but reference can also bring some problems.</p>
+<p>One big problem is that <strong>When a function&rsquo;s parameter is reference and we are trying to use that function, we can&rsquo;t be sure whether it is reference or not.</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">data</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="n">someFunc</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>In C language, we can be sure that the value of <code>data</code> is still 10 after <code>someFunc(data)</code> has been executed.</p>
+<p>In C++, however, if the function is declared like <code>void someFunc(int&amp;)</code>, there exists a possibility of modifying the value of <code>data</code>.</p>
+<p>This is where const reference should come in. we can prevent modifying the value of original argument by declaring the function as <code>void someFunc(const int&amp;)</code>.</p>
+<p>Const reference also makes referencing to constant values possible.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="k">const</span> <span class="kt">int</span> <span class="n">data</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">int</span><span class="o">&amp;</span> <span class="n">rData</span> <span class="o">=</span> <span class="n">data</span><span class="p">;</span> <span class="c1">// O
+</span><span class="c1"></span><span class="k">const</span> <span class="kt">int</span><span class="o">&amp;</span> <span class="n">rNum</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>    <span class="c1">// O
+</span></code></pre></td></tr></table>
+</div>
+</div><p>This resolves another problem stated above. I mentioned <code>increase(10)</code> is not allowed in the function parameter example.</p>
+<p>If the function parameter is reference, argument should be made as a non-constant variable. This is very annoying.</p>
+<p>However, if we use const reference, we are then be able to pass contant argument to the function. Therefore, <code>increase(10)</code>is possible (Actually this function modifies the value of the argument, so it is not the right case to use it).</p>
+<hr>
+<h2 id="5-r-value-references-c11">5 R-value References (C++11)</h2>
+<p>R-value reference is introduced in C++11. Reference we discussed so far is actually a L-value reference.</p>
+<p>R-value reference uses two <code>&amp;</code> symbols:</p>
+<p><code>&lt;type&gt;&amp;&amp; &lt;name&gt; = &lt;r-value&gt;</code></p>
+<h3 id="l-value-and-r-value">L-value and R-value</h3>
+<p>Simply we distinguish l-values and r-values by figuring out whether the value can be put left-side or right-side of assignment operator(<code>=</code>). However, I need slightly more concrete criteria.</p>
+<p><strong>L-value</strong> is an object whose memory location is identifiable. Most variables are l-values.</p>
+<p><strong>R-value</strong> is any object that is not l-value, which means we cannot identify its memory location. Literals and temporary values obtained from arithmetic operations or returned by function calls are usually r-values.</p>
+<div class="details admonition warning open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-exclamation-triangle fa-fw"></i>Misconceptions<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ol>
+<li>Functions or operators always yields R-values</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">+</span> <span class="mi">3</span><span class="p">;</span> <span class="c1">// (5 + 3) is r-value
+</span><span class="c1"></span>
+<span class="kt">int</span> <span class="n">b</span><span class="p">;</span>
+<span class="kt">int</span><span class="o">&amp;</span> <span class="n">test</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="n">b</span><span class="p">;</span> <span class="p">}</span>
+<span class="n">test</span><span class="p">()</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// return value of test() is l-value
+</span><span class="c1"></span>
+<span class="kt">int</span> <span class="n">arr</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
+<span class="n">arr</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span> <span class="c1">// [] operator yields l-value
+</span></code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>R-values are not modifiable</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="n">TestClass</span><span class="p">().</span><span class="n">testFunc</span><span class="p">();</span> <span class="c1">// TestClass() returns r-value, but testFunc() may modify TestClass object
+</span></code></pre></td></tr></table>
+</div>
+</div></div>
+        </div>
+    </div>
+<h3 id="referencing-temporary-values">Referencing temporary values</h3>
+<p>A result of arithmetic operations is temporary value. its scope is the line the operation was performed. After the execution of that line, we lose the temporary value.</p>
+<p>R-value reference makes us keep track of the temporary value.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-cpp" data-lang="cpp"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span><span class="cp"></span>
+<span class="kt">int</span> <span class="nf">twice</span><span class="p">(</span><span class="kt">int</span> <span class="n">input</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="n">input</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="kt">int</span><span class="o">&amp;&amp;</span> <span class="n">num1</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">7</span><span class="p">;</span>
+    <span class="kt">int</span><span class="o">&amp;&amp;</span> <span class="n">num2</span> <span class="o">=</span> <span class="n">twice</span><span class="p">(</span><span class="mi">10</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>This looks a bit wierd because we can just use simple <code>int num1 = 3 + 7</code> instead of that ugly <code>&amp;&amp;</code>.</p>
+<p>I know this is not the real usefulness of r-value reference.</p>
+<p>I need to study further to figure out that. To be continued&hellip;</p>
+<hr>
+<p>👉 <strong>Thank you for reading my post !</strong> 🙏</p>
+<p>👉 Please leave a comment if you have any ideas to share ! 🎶</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>The article was updated on 2020-05-06</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/references-in-cplusplus/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://jureaky.github.io/references-in-cplusplus/" data-title="References in C&#43;&#43;" data-hashtags="Cpp"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://jureaky.github.io/references-in-cplusplus/" data-hashtag="Cpp"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="https://jureaky.github.io/references-in-cplusplus/" data-title="References in C&#43;&#43;" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://jureaky.github.io/references-in-cplusplus/" data-title="References in C&#43;&#43;"><i class="fab fa-line fa-fw"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://jureaky.github.io/references-in-cplusplus/" data-title="References in C&#43;&#43;" data-image="/images/references-in-cplusplus/featured-img.png"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="Share on Myspace" data-sharer="myspace" data-url="https://jureaky.github.io/references-in-cplusplus/" data-title="References in C&#43;&#43;" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="Share on Blogger" data-sharer="blogger" data-url="https://jureaky.github.io/references-in-cplusplus/" data-title="References in C&#43;&#43;" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="https://jureaky.github.io/references-in-cplusplus/" data-title="References in C&#43;&#43;"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/cpp/">Cpp</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/create-a-github-blog-with-hugo/" class="prev" rel="prev" title="Create a Github Blog With Hugo"><i class="fas fa-angle-left fa-fw"></i>Create a Github Blog With Hugo</a></div>
+</div>
+<div id="comments"></div><br />
+        <br />
+        <br />
+        <script src="https://utteranc.es/client.js"
+            repo="jureaky/blog-comments"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+        </script>
+    </article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.67.1">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.1"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">jureaky</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script type="text/javascript">
+    window.config = {"code":{"copyTitle":"Copy to clipboard","maxShownLines":30},"comment":{},"headerMode":{"desktop":"fixed","mobile":"auto"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"lunrIndexURL":"/index.json","noResultsFound":"No results found","type":"lunr"},"twemoji":true};
+</script><script type="text/javascript" src="https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.closest%2CrequestAnimationFrame%2CCustomEvent%2CPromise%2CObject.entries%2CObject.assign%2CObject.values%2Cfetch%2CElement.prototype.after%2CArray.prototype.fill%2CIntersectionObserver%2CArray.from%2CArray.prototype.find%2CMath.sign"></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/twemoji/twemoji.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
