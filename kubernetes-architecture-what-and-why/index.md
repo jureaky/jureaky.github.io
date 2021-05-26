@@ -11,7 +11,7 @@ The video can be found [here](https://www.youtube.com/watch?v=ZuIQurh_kDk).
 
 ## 1 Kubernetes Architecture - Main Components
 
-{{< image src="/images/kubernetes-architecture-what-and-why/kubernetes-architecture.png">}}
+{{< image src="images/kubernetes-architecture.png">}}
 
 Kubernetes Cluster is divided into two parts:
 

@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noodp"/><title>[Go] Short Variable Declaration | </title><meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://jureaky.github.io/go-short-variable-declaratioin/images/featured-img.png"/>
+<meta name="twitter:title" content="[Go] Short Variable Declaration"/>
+<meta name="twitter:description" content=""/><meta name="Description" content="Tech Clips"><meta property="og:title" content="[Go] Short Variable Declaration" />
+<meta property="og:description" content="How short variable declaration is used in Go." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jureaky.github.io/go-short-variable-declaratioin/" /><meta property="og:image" content="https://jureaky.github.io/go-short-variable-declaratioin/images/featured-img.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-07-19T17:21:16&#43;09:00" />
+<meta property="article:modified_time" content="2020-07-19T17:21:16&#43;09:00" />
+
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+        <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://jureaky.github.io/go-short-variable-declaratioin/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "[Go] Short Variable Declaration",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/jureaky.github.io\/go-short-variable-declaratioin\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/jureaky.github.io\/go-short-variable-declaratioin\/images\/featured-img.png",
+                            "width":  1280 ,
+                            "height":  720 
+                        }],"genre": "posts","keywords": "Go","wordCount":  571 ,
+        "url": "https:\/\/jureaky.github.io\/go-short-variable-declaratioin\/","datePublished": "2020-07-19T17:21:16+09:00","dateModified": "2020-07-19T17:21:16+09:00",
+        "publisher": {
+            "@type": "Person",
+            "name": "", "image": [
+            {
+            "@type": "ImageObject",
+            "url": "\/images\/avatar.png"
+            }
+            ]},"author": {
+                "@type": "Person",
+                "name": ""
+            },"description": ""
+    }
+    </script><script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https:\/\/jureaky.github.io\/"
+        },{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Lang",
+            "item": "https://jureaky.github.io/categories/lang/"
+        },{
+                "@type": "ListItem",
+                "position": 3,
+                "name": "[Go] Short Variable Declaration"
+            }]
+    }
+</script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header>
+    <div class="desktop header" id="header-desktop">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Teclip by Jureaky" class="header-logo logo-svg">Teclip by Jureaky</a>
+            </div>
+            <div class="menu">
+                <nav>
+                    <h2 class="display-hidden">Основная навигация</h2>
+                    <ul class="menu-inner"><li>
+                            <a class="menu-item" href="/posts/"> Posts </a>
+                        </li><li>
+                            <a class="menu-item" href="/tags/"> Tags </a>
+                        </li><li>
+                            <a class="menu-item" href="/categories/"> Categories </a>
+                        </li></ul>
+                </nav><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <span class="svg-icon icon-search"></span>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <span class="svg-icon icon-cancel"></span>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <span class="svg-icon icon-loading"></span>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <span class="svg-icon icon-moon"></span>
+                </a>
+            </div>
+        </div>
+    </div><div class="mobile header" id="header-mobile">
+        <div class="header-container">
+            <div class="header-wrapper">
+                <div class="header-title">
+                    <a href="/" title="Teclip by Jureaky" class="header-logo">Teclip by Jureaky</a>
+                </div>
+                <div class="menu-toggle" id="menu-toggle-mobile">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+            <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                        <div class="search mobile" id="search-mobile">
+                            <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                                <span class="svg-icon icon-search"></span>
+                            </a>
+                            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                                <span class="svg-icon icon-cancel"></span>
+                            </a>
+                            <span class="search-button search-loading" id="search-loading-mobile">
+                                <span class="svg-icon icon-loading"></span>
+                            </span>
+                        </div>
+                        <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                            Cancel
+                        </a>
+                    </div><nav>
+                    <h2 class="display-hidden">Основная навигация</h2>
+                    <ul><li>
+                            <a class="menu-item" href="/posts/" title="">Posts</a>
+                        </li><li>
+                            <a class="menu-item" href="/tags/" title="">Tags</a>
+                        </li><li>
+                            <a class="menu-item" href="/categories/" title="">Categories</a>
+                        </li></ul>
+                </nav>
+                <a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <span class="svg-icon icon-moon"></span>
+                </a></div>
+        </div>
+    </div><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div></header><main class="main">
+<div class="container content-article  theme-full"><div class="toc" id="toc-auto">
+            <div class="toc-title">Contents</div>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div>
+    
+
+    
+    
+    <article>
+    
+
+        <header class="header-post">
+
+            
+
+            
+            <div class="featured-image" style="background-image: url('https://jureaky.github.io/go-short-variable-declaratioin/images/featured-img.png');"><div class="post-title">
+
+                    <div class="post-all-meta">
+                        <nav class="breadcrumbs">
+    <ol>
+        <li><a href="/">Home </a></li><li><a href="/categories/lang/">Lang </a></li><li>[Go] Short Variable Declaration</li>
+    </ol>
+</nav>
+                        <h1 class="single-title flipInX">[Go] Short Variable Declaration</h1><div class="post-meta summary-post-meta"><span class="post-category meta-item">
+                                <a href="/categories/lang/"><span class="svg-icon icon-folder"></span>Lang</a>
+                            </span><span class="post-meta-date meta-item">
+                                <span class="svg-icon icon-clock"></span><time class="timeago" datetime="2020-07-19">2020-07-19</time>
+                            </span><span class="post-meta-words meta-item">
+                                <span class="svg-icon icon-pencil"></span>571 words
+                            </span>
+                            <span class="post-meta-reading meta-item">
+                                <span class="svg-icon icon-stopwatch"></span>3 minutes
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                </div></header>
+
+        <div class="article-post toc-start">
+
+            <div class="content-block content-block-first content-block-position">
+
+                <div class="post single"><div class="details toc" id="toc-static"  data-kept="">
+                        <div class="details-summary toc-title">
+                            <span>Contents</span>
+                        </div>
+                        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-what-is-short-variable-declaration">1. What is Short Variable Declaration?</a></li>
+    <li><a href="#2-basic-syntax">2. Basic Syntax</a></li>
+    <li><a href="#3-rules-to-follow">3. Rules to Follow</a>
+      <ul>
+        <li><a href="#1-only-used-for-local-variables">1) Only used for Local Variables</a></li>
+        <li><a href="#2-can-be-used-for-multiple-variable-declarations">2) Can be used for multiple variable declarations</a></li>
+        <li><a href="#3-cannot-use-twice-for-the-same-variable">3) Cannot use twice for the same variable</a></li>
+        <li><a href="#4-can-be-used-in-statements-like-if-for-">4) Can be used in statements like if, for &hellip;</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+                    </div><h2 id="1-what-is-short-variable-declaration" class="headerLink"><a href="#1-what-is-short-variable-declaration" class="header-mark"></a>1. What is Short Variable Declaration?</h2><p>In most programming language, variable is initialized using assignment operator <code>=</code>.</p>
+<p>Go is not immune from this typical convention. It, however, supports a short-hand version of declaring and initializing variables at the same time.</p>
+<p>With the help of what is called &ldquo;Short Variable Declaration Operator(<code>:=</code>)&rdquo;, the code looks much nicer, but this operator adds up complexity which leads us to make some mistakes.</p>
+<p>Let&rsquo;s get into more details of short variable declaration operator(<code>:=</code>).</p>
+<h2 id="2-basic-syntax" class="headerLink"><a href="#2-basic-syntax" class="header-mark"></a>2. Basic Syntax</h2><ul>
+<li>regular variable declaration syntax using <code>var</code> keyword</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">var &lt;variable_name&gt; &lt;variable_type&gt;
+
+// Or you can initialize at the same time
+var &lt;variable_name&gt; &lt;variable_type&gt; = &lt;value&gt;
+
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>variable declaration using Short variable declaration operator</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;variable_name&gt; := &lt;initial_value&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>You can declare a variable or many without specifying its type.</p>
+<h2 id="3-rules-to-follow" class="headerLink"><a href="#3-rules-to-follow" class="header-mark"></a>3. Rules to Follow</h2><h3 id="1-only-used-for-local-variables" class="headerLink"><a href="#1-only-used-for-local-variables" class="header-mark"></a>1) Only used for Local Variables</h3><p>You cannot use short variable declaration to declare global variable, which means you can only use it inside a function.</p>
+<p>Global variables at package level can only be declared using <code>var</code> keyword.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
+
+<span class="nx">globalVar</span> <span class="o">:=</span> <span class="mi">25</span> <span class="c1">// Wrong!! syntax error: non-declaration statement outside function body
+</span><span class="c1"></span>
+<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">localVar</span> <span class="o">:=</span> <span class="mi">3</span> <span class="c1">// OK
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="2-can-be-used-for-multiple-variable-declarations" class="headerLink"><a href="#2-can-be-used-for-multiple-variable-declarations" class="header-mark"></a>2) Can be used for multiple variable declarations</h3><p>Go supports multiple variable declarations in one line, which also works for short variable declaration.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
+
+<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">var1</span><span class="p">,</span> <span class="nx">var2</span> <span class="o">:=</span> <span class="mi">5</span><span class="p">,</span> <span class="s">&#34;hello&#34;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="3-cannot-use-twice-for-the-same-variable" class="headerLink"><a href="#3-cannot-use-twice-for-the-same-variable" class="header-mark"></a>3) Cannot use twice for the same variable</h3><p>Using <code>:=</code> operator means declaring a new variable like using <code>var</code> keyword.</p>
+<p>Like you cannot use <code>var</code> to the variable you declared before, <code>:=</code> cannot be used twice.</p>
+<p>If you want to assign a new value to it, just use <code>=</code>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
+
+<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">var1</span> <span class="o">:=</span> <span class="mi">5</span>
+
+    <span class="nx">var1</span> <span class="p">=</span> <span class="mi">7</span> <span class="c1">// OK
+</span><span class="c1"></span>    <span class="nx">var1</span> <span class="o">:=</span> <span class="mi">10</span> <span class="c1">// Wrong!! no new variables on left side of :=
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="details admonition warning open">
+        <div class="details-summary admonition-title" style="display: none">
+            <i class="icon admonition-icon icon-warning"></i>Warnings<i class="details-icon admonition-icon admonition-icon-arrow-right"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p><strong>1. Using short variable declaration operator without type doesn&rsquo;t mean that the variable is type-free.</strong></p>
+<p>Go compiler infers the variable&rsquo;s type when initializing. Therefore, if you want to assign a new value which has a different type to the variable, you&rsquo;ll encounter an error.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kn">package</span> <span class="nx">main</span>
+
+<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">var1</span> <span class="o">:=</span> <span class="kc">true</span>
+    <span class="nx">var1</span> <span class="p">=</span> <span class="s">&#34;hello&#34;</span> <span class="c1">// Wrong!! cannot use &#34;String&#34; (type untyped string) as type bool in assignment
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>2. You can use it twice in multiple variable declarations if you introduce new variables.</strong></p>
+<p>The error message above written in the inline comment(<em>no new variables on left side of :=</em>) makes us raise a question. What if there are new variables on the left?</p>
+<p>Well, you can re-declare the variable with new variables in multi-variable assignment. This property is used frequently when dealing with errors.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="kd">func</span> <span class="nf">exampleFunc</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">var1</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nf">someFunc1</span><span class="p">()</span>
+
+    <span class="nx">var2</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nf">someFunc2</span><span class="p">()</span> <span class="c1">// You don&#39;t need to write as err1, err2, ...
+</span><span class="c1"></span><span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>But still, you cannot re-declare a variable with different type.</p>
+</div>
+        </div>
+    </div>
+<h3 id="4-can-be-used-in-statements-like-if-for-" class="headerLink"><a href="#4-can-be-used-in-statements-like-if-for-" class="header-mark"></a>4) Can be used in statements like if, for &hellip;</h3><p>You can use short variable declaration to use a certain variable only in the scope of if statements for example.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="k">if</span> <span class="nx">i</span> <span class="o">:=</span> <span class="mi">10</span><span class="p">;</span> <span class="nx">i</span> <span class="p">&gt;</span> <span class="mi">0</span> <span class="p">{</span>
+    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;i is greater than 0&#34;</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><hr>
+<p>👉 <strong>Thank you for reading my post !</strong> 🙏</p>
+<p>👉 Please leave a comment if you have any ideas to share ! 🎶</p>
+</div><footer>
+                        <div class="post">
+
+
+<div class="post-share"><div class="share-link">
+        <a class="share-icon share-twitter" href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://jureaky.github.io/go-short-variable-declaratioin/" data-title="[Go] Short Variable Declaration" data-hashtags="Go"><span class="svg-social-icon icon-twitter"></span></a>
+    </div><div class="share-link">
+        <a class="share-icon share-facebook" href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://jureaky.github.io/go-short-variable-declaratioin/" data-hashtag="Go"><span class="svg-social-icon icon-facebook"></span></a>
+    </div><div class="share-link">
+        <a class="share-icon share-linkedin" href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://jureaky.github.io/go-short-variable-declaratioin/"><span class="svg-social-icon icon-linkedin"></span></a>
+    </div></div>
+
+<div class="footer-post-author">
+    <div class="author-avatar"><a href="https://jureaky.github.io" target="_blank"><img alt="from NULL, to ALL" src="/images/avatar.png"></a></div>
+    <div class="author-info">
+        <div class="name"><a href="https://jureaky.github.io" target="_blank"></a></div>
+        <div class="number-posts">from NULL, to ALL</span></div>
+    </div>
+</div><div class="post-tags"><a href="/tags/go/" class="tag">Go</a></div></div>
+                </footer></div>
+        <div id="toc-final"></div>
+        </div>
+
+    
+    </article>
+    <section class="page single comments content-block-position">
+        <h1 class="display-hidden">Комментарии</h1><div id="comments"><div id="utterances"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
+            </noscript></div></section></div>
+
+</main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.83.1">Hugo</a> | Theme - <a href="https://ublogger.netlify.app/?utm_source=https://jureaky.github.io/&utm_medium=footer&utm_campaign=config&utm_term=2.0.1" target="_blank" title="uBlogger 2.0.1">uBlogger</a>
+                </div><div class="footer-line"><i class="svg-icon icon-copyright"></i><span>2020 - 2021</span><span class="author">&nbsp;<a href="https://jureaky.github.io" target="_blank">jureaky</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <aside id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="svg-icon icon-arrow-up"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="svg-icon icon-comments-fixed"></i>
+            </a>
+        </aside><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script src="/lib/autocomplete/autocomplete.min.js"></script><script src="/lib/lunr/lunr.min.js"></script><script src="/lib/twemoji/twemoji.min.js"></script><script src="/lib/clipboard/clipboard.min.js"></script><script src="/lib/sharer/sharer.min.js"></script><script src="/lib/katex/katex.min.js"></script><script src="/lib/katex/auto-render.min.js"></script><script src="/lib/katex/copy-tex.min.js"></script><script src="/lib/katex/mhchem.min.js"></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":30},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"","lightTheme":"github-light","repo":"jureaky/blog-comments"}},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":null,"type":"lunr"},"twemoji":true};</script><script src="/js/theme.min.js"></script></body>
+</html>

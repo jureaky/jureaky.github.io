@@ -2,23 +2,22 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="robots" content="noodp" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>Kubernetes Architecture - What and Why | Teclip by Jureaky</title>
-        <meta name="Description" content="Tech Clips"><meta property="og:title" content="Kubernetes Architecture - What and Why" />
+        <meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noodp"/><title>Kubernetes Architecture - What and Why | </title><meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://jureaky.github.io/kubernetes-architecture-what-and-why/images/featured-img.png"/>
+<meta name="twitter:title" content="Kubernetes Architecture - What and Why"/>
+<meta name="twitter:description" content=""/><meta name="Description" content="Tech Clips"><meta property="og:title" content="Kubernetes Architecture - What and Why" />
 <meta property="og:description" content="Kubernetes Architecture and Design Principles Behind It." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jureaky.github.io/kubernetes-architecture-what-and-why/" />
-<meta property="article:published_time" content="2020-12-24T16:25:20+09:00" />
-<meta property="article:modified_time" content="2020-12-24T16:25:20+09:00" />
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Kubernetes Architecture - What and Why"/>
-<meta name="twitter:description" content="Kubernetes Architecture and Design Principles Behind It."/>
+<meta property="og:url" content="https://jureaky.github.io/kubernetes-architecture-what-and-why/" /><meta property="og:image" content="https://jureaky.github.io/kubernetes-architecture-what-and-why/images/featured-img.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-12-24T16:25:20&#43;09:00" />
+<meta property="article:modified_time" content="2020-12-24T16:25:20&#43;09:00" />
+
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://jureaky.github.io/kubernetes-architecture-what-and-why/" /><link rel="prev" href="https://jureaky.github.io/go-short-variable-declaration/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+        <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://jureaky.github.io/kubernetes-architecture-what-and-why/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -27,114 +26,177 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/jureaky.github.io\/kubernetes-architecture-what-and-why\/"
-        },"image": {
-                "@type": "ImageObject",
-                "url": "https:\/\/jureaky.github.io\/cover.png",
-                "width":  800 ,
-                "height":  600 
-            },"genre": "posts","keywords": "Kubernetes","wordcount":  1105 ,
-        "url": "https:\/\/jureaky.github.io\/kubernetes-architecture-what-and-why\/","datePublished": "2020-12-24T16:25:20+09:00","dateModified": "2020-12-24T16:25:20+09:00","publisher": {
-                "@type": "Organization",
-                "name": "xxxx",
-                "logo": {
-                "@type": "ImageObject",
-                "url": "https:\/\/jureaky.github.io\/logo.png",
-                "width":  127 ,
-                "height":  40 
-                }
-            },"author": {
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/jureaky.github.io\/kubernetes-architecture-what-and-why\/images\/featured-img.png",
+                            "width":  1280 ,
+                            "height":  720 
+                        }],"genre": "posts","keywords": "Kubernetes","wordCount":  1099 ,
+        "url": "https:\/\/jureaky.github.io\/kubernetes-architecture-what-and-why\/","datePublished": "2020-12-24T16:25:20+09:00","dateModified": "2020-12-24T16:25:20+09:00",
+        "publisher": {
+            "@type": "Person",
+            "name": "", "image": [
+            {
+            "@type": "ImageObject",
+            "url": "\/images\/avatar.png"
+            }
+            ]},"author": {
                 "@type": "Person",
-                "name": "jureaky"
+                "name": ""
             },"description": ""
     }
-    </script></head>
-    <body><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+    </script><script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https:\/\/jureaky.github.io\/"
+        },{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Container",
+            "item": "https://jureaky.github.io/categories/container/"
+        },{
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Kubernetes Architecture - What and Why"
+            }]
+    }
+</script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
 
-        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
-    <div class="header-wrapper">
-        <div class="header-title">
-            <a href="/" title="Teclip by Jureaky">Teclip by Jureaky</a>
-        </div>
-        <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+        <div id="mask"></div><div class="wrapper"><header>
+    <div class="desktop header" id="header-desktop">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Teclip by Jureaky" class="header-logo logo-svg">Teclip by Jureaky</a>
+            </div>
+            <div class="menu">
+                <nav>
+                    <h2 class="display-hidden">Основная навигация</h2>
+                    <ul class="menu-inner"><li>
+                            <a class="menu-item" href="/posts/"> Posts </a>
+                        </li><li>
+                            <a class="menu-item" href="/tags/"> Tags </a>
+                        </li><li>
+                            <a class="menu-item" href="/categories/"> Categories </a>
+                        </li></ul>
+                </nav><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
                         <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
                         <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
-                            <i class="fas fa-search fa-fw"></i>
+                            <span class="svg-icon icon-search"></span>
                         </a>
                         <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
-                            <i class="fas fa-times-circle fa-fw"></i>
+                            <span class="svg-icon icon-cancel"></span>
                         </a>
                         <span class="search-button search-loading" id="search-loading-desktop">
-                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                            <span class="svg-icon icon-loading"></span>
                         </span>
                     </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                    <i class="fas fa-adjust fa-fw"></i>
+                <span class="svg-icon icon-moon"></span>
                 </a>
             </div>
         </div>
-    </div>
-</header><header class="mobile" id="header-mobile">
-    <div class="header-container">
-        <div class="header-wrapper">
-            <div class="header-title">
-                <a href="/" title="Teclip by Jureaky">Teclip by Jureaky</a>
+    </div><div class="mobile header" id="header-mobile">
+        <div class="header-container">
+            <div class="header-wrapper">
+                <div class="header-title">
+                    <a href="/" title="Teclip by Jureaky" class="header-logo">Teclip by Jureaky</a>
+                </div>
+                <div class="menu-toggle" id="menu-toggle-mobile">
+                    <span></span><span></span><span></span>
+                </div>
             </div>
-            <div class="menu-toggle" id="menu-toggle-mobile">
-                <span></span><span></span><span></span>
-            </div>
+            <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                        <div class="search mobile" id="search-mobile">
+                            <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                                <span class="svg-icon icon-search"></span>
+                            </a>
+                            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                                <span class="svg-icon icon-cancel"></span>
+                            </a>
+                            <span class="search-button search-loading" id="search-loading-mobile">
+                                <span class="svg-icon icon-loading"></span>
+                            </span>
+                        </div>
+                        <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                            Cancel
+                        </a>
+                    </div><nav>
+                    <h2 class="display-hidden">Основная навигация</h2>
+                    <ul><li>
+                            <a class="menu-item" href="/posts/" title="">Posts</a>
+                        </li><li>
+                            <a class="menu-item" href="/tags/" title="">Tags</a>
+                        </li><li>
+                            <a class="menu-item" href="/categories/" title="">Categories</a>
+                        </li></ul>
+                </nav>
+                <a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <span class="svg-icon icon-moon"></span>
+                </a></div>
         </div>
-        <div class="menu" id="menu-mobile"><div class="search-wrapper">
-                    <div class="search mobile" id="search-mobile">
-                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
-                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
-                            <i class="fas fa-search fa-fw"></i>
-                        </a>
-                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
-                            <i class="fas fa-times-circle fa-fw"></i>
-                        </a>
-                        <span class="search-button search-loading" id="search-loading-mobile">
-                            <i class="fas fa-spinner fa-fw fa-spin"></i>
-                        </span>
-                    </div>
-                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
-                        Cancel
-                    </a>
-                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
-                <i class="fas fa-adjust fa-fw"></i>
-            </a></div>
-    </div>
-</header>
-<div class="search-dropdown desktop">
+    </div><div class="search-dropdown desktop">
     <div id="search-dropdown-desktop"></div>
 </div>
 <div class="search-dropdown mobile">
     <div id="search-dropdown-mobile"></div>
-</div>
-<main class="main">
-                <div class="container"><div class="toc" id="toc-auto">
-            <h2 class="toc-title">Contents</h2>
+</div></header><main class="main">
+<div class="container content-article  theme-full"><div class="toc" id="toc-auto">
+            <div class="toc-title">Contents</div>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">Kubernetes Architecture - What and Why</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>jureaky</a></span>&nbsp;
-                    <span class="post-category">included in<a href="/categories/container/">
-                                <i class="far fa-folder fa-fw"></i>Container
-                            </a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i><time datetime=2020-12-24>2020-12-24</time>&nbsp;
-                <i class="fas fa-pencil-alt fa-fw"></i>about 1105 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>6 min&nbsp;</div>
-        </div><div class="featured-image"><img
-        class="lazyload"
-        src="/svg/loading/normal.min.svg"
-        data-sizes="auto"
-        data-srcset="/images/kubernetes-architecture-what-and-why/featured-img.png, /images/kubernetes-architecture-what-and-why/featured-img.png 1.5x, /images/kubernetes-architecture-what-and-why/featured-img.png 2x"
-        data-src="/images/kubernetes-architecture-what-and-why/featured-img.png"
-        alt="/images/kubernetes-architecture-what-and-why/featured-img.png"
-        title="/images/kubernetes-architecture-what-and-why/featured-img.png" /></div><div class="details toc" id="toc-static">
-                <div class="details-summary toc-title">
-                    <span>Contents</span>
-                    <span><i class="details-icon fas fa-angle-right"></i></span>
+        </div>
+    
+
+    
+    
+    <article>
+    
+
+        <header class="header-post">
+
+            
+
+            
+            <div class="featured-image" style="background-image: url('https://jureaky.github.io/kubernetes-architecture-what-and-why/images/featured-img.png');"><div class="post-title">
+
+                    <div class="post-all-meta">
+                        <nav class="breadcrumbs">
+    <ol>
+        <li><a href="/">Home </a></li><li><a href="/categories/container/">Container </a></li><li>Kubernetes Architecture - What and Why</li>
+    </ol>
+</nav>
+                        <h1 class="single-title flipInX">Kubernetes Architecture - What and Why</h1><div class="post-meta summary-post-meta"><span class="post-category meta-item">
+                                <a href="/categories/container/"><span class="svg-icon icon-folder"></span>Container</a>
+                            </span><span class="post-meta-date meta-item">
+                                <span class="svg-icon icon-clock"></span><time class="timeago" datetime="2020-12-24">2020-12-24</time>
+                            </span><span class="post-meta-words meta-item">
+                                <span class="svg-icon icon-pencil"></span>1099 words
+                            </span>
+                            <span class="post-meta-reading meta-item">
+                                <span class="svg-icon icon-stopwatch"></span>6 minutes
+                            </span>
+                        </div>
+
+                    </div>
+
                 </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+
+                </div></header>
+
+        <div class="article-post toc-start">
+
+            <div class="content-block content-block-first content-block-position">
+
+                <div class="post single"><div class="details toc" id="toc-static"  data-kept="">
+                        <div class="details-summary toc-title">
+                            <span>Contents</span>
+                        </div>
+                        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
     <li><a href="#1-kubernetes-architecture---main-components">1 Kubernetes Architecture - Main Components</a>
       <ul>
@@ -152,27 +214,23 @@
     </li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><p>Having been struggling with Kubernetes clusters in the project I&rsquo;m currently working on, I felt the need to understand Kubernetes architecture.</p>
+                    </div><p>Having been struggling with Kubernetes clusters in the project I&rsquo;m currently working on, I felt the need to understand Kubernetes architecture.</p>
 <p>While googling I found a great resource presented by Saad Ali, which gives a deeper insights on the design principle of Kubernets.</p>
 <p>This article can be said as a brief summary of the video. The talk is from 2018. Year 2018 sounds like an ancient times for the Kubernetes history, but he delivers the essence of Kubernetes philosophy.</p>
 <p>The video can be found <a href="https://www.youtube.com/watch?v=ZuIQurh_kDk" target="_blank" rel="noopener noreffer">here</a>.</p>
-<h2 id="1-kubernetes-architecture---main-components">1 Kubernetes Architecture - Main Components</h2>
-<a class="lightgallery" href="/images/kubernetes-architecture-what-and-why/kubernetes-architecture.png" title="/images/kubernetes-architecture-what-and-why/kubernetes-architecture.png" data-thumbnail="/images/kubernetes-architecture-what-and-why/kubernetes-architecture.png">
-        <img
-            class="lazyload"
-            src="/svg/loading/normal.min.svg"
-            data-sizes="auto"
-            data-srcset="/images/kubernetes-architecture-what-and-why/kubernetes-architecture.png, /images/kubernetes-architecture-what-and-why/kubernetes-architecture.png 1.5x, /images/kubernetes-architecture-what-and-why/kubernetes-architecture.png 2x"
-            data-src="/images/kubernetes-architecture-what-and-why/kubernetes-architecture.png"
-            alt="/images/kubernetes-architecture-what-and-why/kubernetes-architecture.png" />
+<h2 id="1-kubernetes-architecture---main-components" class="headerLink"><a href="#1-kubernetes-architecture---main-components" class="header-mark"></a>1 Kubernetes Architecture - Main Components</h2><a target="_blank" href="images/kubernetes-architecture.png" title="/kubernetes-architecture-what-and-why/images/kubernetes-architecture.png" >
+        <img loading="lazy" decoding="async"
+             
+             src="images/kubernetes-architecture.png"
+            alt="/kubernetes-architecture-what-and-why/images/kubernetes-architecture.png"
+        />
     </a>
 <p>Kubernetes Cluster is divided into two parts:</p>
 <ul>
 <li>Control Plane</li>
 <li>Worker Node</li>
 </ul>
-<h3 id="control-plane">Control Plane</h3>
-<p>As the name itself suggests, the Control Plane manages the whole cluster and Kubernetes objects.</p>
+<h3 id="control-plane" class="headerLink"><a href="#control-plane" class="header-mark"></a>Control Plane</h3><p>As the name itself suggests, the Control Plane manages the whole cluster and Kubernetes objects.</p>
 <p>It responds to any changes end-users(or other components) requested, sets the desired state of the cluster, and tries to match the current state to the desired state.</p>
 <p>The Control Plane consists of:</p>
 <ul>
@@ -181,33 +239,29 @@
 <li><code>Scheduler</code>: Queries the API server to watch for any unassigned objects, assigns them to one of available worker nodes.</li>
 <li><code>Controller Manager</code>: Synchronizes the actual state of a cluster to the desired state.</li>
 </ul>
-<h3 id="worker-node">Worker Node</h3>
-<p>Worker Node is where the actual Pods are running. Inside a pod, container(s) is/are launched by the configured container runtime(mostly Docker, for now). The Worker Node has following components:</p>
+<h3 id="worker-node" class="headerLink"><a href="#worker-node" class="header-mark"></a>Worker Node</h3><p>Worker Node is where the actual Pods are running. Inside a pod, container(s) is/are launched by the configured container runtime(mostly Docker, for now). The Worker Node has following components:</p>
 <ul>
 <li><code>kubelet</code>: Manages everything running on that node. Monitors API server looking for assigned pods to that node, and reports any events on that node to API server.</li>
 <li><code>kube-proxy</code>: Ensures network is properly configured for a cluster. Configures <code>iptables</code> on a node.</li>
 </ul>
 <p>In addition to those components I mentioned above, there are other components like <code>kube-dns</code>, but let&rsquo;s hold them over till next time.</p>
 <hr>
-<h2 id="2-design-principles-of-kubernetes">2 Design Principles of Kubernetes</h2>
-<p>This section focuses on why Kubernetes is designed this way. Like I said in the beginning, this section is extracted from the talk by Saad Ali. Thank him for sharing his great insight on Kubernetes. 👏👏</p>
-<p>Kubernetes cluster is designed to be robust, to be fault-tolerent, and to minimize users&rsquo; burden to manage clusters.</p>
+<h2 id="2-design-principles-of-kubernetes" class="headerLink"><a href="#2-design-principles-of-kubernetes" class="header-mark"></a>2 Design Principles of Kubernetes</h2><p>This section focuses on why Kubernetes is designed this way. Like I said in the beginning, this section is extracted from the talk by Saad Ali. Thank him for sharing his great insight on Kubernetes. 👏👏</p>
+<p>Kubernetes cluster is designed to be robust, to be fault-tolerent, and to minimize users' burden to manage clusters.</p>
 <p>4 Design principles below accomplished the purposes, and led to the current success of Kubernetes.</p>
-<h3 id="1-kubernetes-apis-are-declarative-rather-than-imperative">1) Kubernetes APIs are declarative, rather than imperative</h3>
-<p>Users just declare what the desired state of a cluster would be, then the system internally manages to drive the given desired state.</p>
+<h3 id="1-kubernetes-apis-are-declarative-rather-than-imperative" class="headerLink"><a href="#1-kubernetes-apis-are-declarative-rather-than-imperative" class="header-mark"></a>1) Kubernetes APIs are declarative, rather than imperative</h3><p>Users just declare what the desired state of a cluster would be, then the system internally manages to drive the given desired state.</p>
 <p>What would happen if we used imperative APIs?</p>
 <p>You should <code>ssh</code> into each node and command to that node like &ldquo;Run this pod. If the pod fails, restart it&hellip; blah blah&rdquo;</p>
 <p>It would be darn complicated to give every condition and handle all failure cases.</p>
 <p>However, Using declarative APIs makes our life a lot easier. Users only need to state “I want my cluster to be …,” then the magic happens! When Pods are dead, or even some nodes crashed, the Control Plane will drive the actual state to the desired state using available resources.</p>
-<h3 id="2-there-are-no-hidden-internal-apis">2) There are no hidden internal APIs</h3>
-<p>Kubernetes internal components use exactly the same APIs which end-users use to communicate each other.</p>
+<h3 id="2-there-are-no-hidden-internal-apis" class="headerLink"><a href="#2-there-are-no-hidden-internal-apis" class="header-mark"></a>2) There are no hidden internal APIs</h3><p>Kubernetes internal components use exactly the same APIs which end-users use to communicate each other.</p>
 <p>This makes Kubernetes easily configurable(Everyone knows it&rsquo;s not easy though😭). You can even build a custom scheculer.</p>
 <p>Moreover, Communication between Control Plane and Worker Node(s) can take the same advantage of using declarative APIs. Let&rsquo;s say our Control Plane uses imperative APIs when talking to Worker Nodes. We achieved user-API&rsquo;s simplicity, but Control Plane implementation would be a mess.</p>
 <p>Instead, Kubernetes adopted the same aproach. Each Worker Node keeps watching Contorl Plane&rsquo;s API server if there exists any updates. Control Plane only needs to set the desired state of each Worker Node. Each Worker Node takes care of what should happen on the node.</p>
 <p>Mr. Ali describes that this mechanism is like &ldquo;level-triggered&rdquo; instead of &ldquo;edge-triggered.&rdquo;</p>
 <div class="details admonition question open">
-        <div class="details-summary admonition-title">
-            <i class="icon fas fa-question-circle fa-fw"></i>level-triggered vs edge-triggered<i class="details-icon fas fa-angle-right fa-fw"></i>
+        <div class="details-summary admonition-title" style="display: none">
+            <i class="icon admonition-icon icon-question"></i>level-triggered vs edge-triggered<i class="details-icon admonition-icon admonition-icon-arrow-right"></i>
         </div>
         <div class="details-content">
             <div class="admonition-content"><p>Those terms <strong>level-triggered</strong> and <strong>edge-triggered</strong> are originally used in electronics, but the analogy makes sense.</p>
@@ -217,8 +271,7 @@
         </div>
     </div>
 <p>This removes a single point of failure. Even when the Control Plane is down, all Worker Nodes can do what they&rsquo;re supposed to do based on the last state they queried.</p>
-<h3 id="3-meet-the-user-where-they-are">3) Meet the user where they are</h3>
-<p>One of primary goals of Kubernetes was the ability to migrate existing applications without additional modification.</p>
+<h3 id="3-meet-the-user-where-they-are" class="headerLink"><a href="#3-meet-the-user-where-they-are" class="header-mark"></a>3) Meet the user where they are</h3><p>One of primary goals of Kubernetes was the ability to migrate existing applications without additional modification.</p>
 <p>This is closely related to passing data or configuration to the running application. Kubernetes supports the following:</p>
 <ul>
 <li><code>Secret</code>- can be used when storing sensitive data like password</li>
@@ -227,67 +280,56 @@
 </ul>
 <p>Data objects are stored in the Control Plane, but Pods should access the data inside those objects. Letting pods know the API server endpoint is additional modification which hinders transition to Kubernetes.</p>
 <p>Instead of communicating directly with API server in the Control Plane, Kubernetes allows data objects to be mounted as a file or environment variables in a container. In this manner, users need not amend the application itself, they just create some data objects and indicate that Pod A needs ConfigMap A.</p>
-<h3 id="4-workload-portability">4) Workload Portability</h3>
-<blockquote>
+<h3 id="4-workload-portability" class="headerLink"><a href="#4-workload-portability" class="header-mark"></a>4) Workload Portability</h3><blockquote>
 <p>Decouple distributed system application development from cluster implementation.</p>
 </blockquote>
 <p>One of biggest advantages of Kubernetes is that users can deploy applications exactly the same way regardless of which Kubernetes cluster they&rsquo;re working on. Kubernetes is designed to provide true abstraction layer to users so that they need not consider which machine the cluster is configured, OS, or devices.</p>
 <p>For example, Kubernetes supports referencing Cloud storages(GCE PD, AWS EBS, etc) directly when creating a Pod. But it should never be done like that way, because it prevents moving that Pod to another Cloud Service Provider.</p>
 <p>Instead, Kubernetes provides what it&rsquo;s called <strong>PVC(PersistentVolumeClaim) / PV(PersistentVolume)</strong>. This decouples storage consumption from storage implementation. User-facing abstraction layer can be portable.</p>
-<p>This led to Kubernetes&rsquo; current success and popularity.</p>
+<p>This led to Kubernetes' current success and popularity.</p>
 <hr>
 <p>👉 <strong>Thank you for reading my post !</strong> 🙏</p>
 <p>👉 Please leave a comment if you have any ideas to share ! 🎶</p>
-</div><div class="post-footer" id="post-footer">
-    <div class="post-info">
-        <div class="post-info-line">
-            <div class="post-info-mod">
-                <span>The article was updated on 2020-12-24</span>
-            </div>
-            <div class="post-info-license"></div>
-        </div>
-        <div class="post-info-line">
-            <div class="post-info-md"><span>
-                            <a class="link-to-markdown" href="/kubernetes-architecture-what-and-why/index.md" target="_blank">Read Markdown</a>
-                        </span></div>
-            <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://jureaky.github.io/kubernetes-architecture-what-and-why/" data-title="Kubernetes Architecture - What and Why" data-hashtags="Kubernetes"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://jureaky.github.io/kubernetes-architecture-what-and-why/" data-hashtag="Kubernetes"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="https://jureaky.github.io/kubernetes-architecture-what-and-why/" data-title="Kubernetes Architecture - What and Why" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://jureaky.github.io/kubernetes-architecture-what-and-why/" data-title="Kubernetes Architecture - What and Why"><i class="fab fa-line fa-fw"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://jureaky.github.io/kubernetes-architecture-what-and-why/" data-title="Kubernetes Architecture - What and Why" data-image="/images/kubernetes-architecture-what-and-why/featured-img.png"><i class="fab fa-weibo fa-fw"></i></a><a href="javascript:void(0);" title="Share on Myspace" data-sharer="myspace" data-url="https://jureaky.github.io/kubernetes-architecture-what-and-why/" data-title="Kubernetes Architecture - What and Why" data-description=""><i data-svg-src="/lib/simple-icons/icons/myspace.min.svg"></i></a><a href="javascript:void(0);" title="Share on Blogger" data-sharer="blogger" data-url="https://jureaky.github.io/kubernetes-architecture-what-and-why/" data-title="Kubernetes Architecture - What and Why" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="https://jureaky.github.io/kubernetes-architecture-what-and-why/" data-title="Kubernetes Architecture - What and Why"><i class="fab fa-evernote fa-fw"></i></a></span>
-            </div>
-        </div>
-    </div>
+</div><footer>
+                        <div class="post">
 
-    <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/kubernetes/">Kubernetes</a></section>
-        <section>
-            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
-        </section>
-    </div>
 
-    <div class="post-nav"><a href="/go-short-variable-declaration/" class="prev" rel="prev" title="[Go] Short Variable Declaration"><i class="fas fa-angle-left fa-fw"></i>[Go] Short Variable Declaration</a></div>
-</div>
-<div id="comments"></div><br />
-        <br />
-        <br />
-        <script src="https://utteranc.es/client.js"
-            repo="jureaky/blog-comments"
-            issue-term="pathname"
-            theme="github-light"
-            crossorigin="anonymous"
-            async>
-        </script>
-    </article></div>
-            </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.67.1">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.1"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
-                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">jureaky</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+<div class="post-share"><div class="share-link">
+        <a class="share-icon share-twitter" href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://jureaky.github.io/kubernetes-architecture-what-and-why/" data-title="Kubernetes Architecture - What and Why" data-hashtags="Kubernetes"><span class="svg-social-icon icon-twitter"></span></a>
+    </div><div class="share-link">
+        <a class="share-icon share-facebook" href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://jureaky.github.io/kubernetes-architecture-what-and-why/" data-hashtag="Kubernetes"><span class="svg-social-icon icon-facebook"></span></a>
+    </div><div class="share-link">
+        <a class="share-icon share-linkedin" href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://jureaky.github.io/kubernetes-architecture-what-and-why/"><span class="svg-social-icon icon-linkedin"></span></a>
+    </div></div>
+
+<div class="footer-post-author">
+    <div class="author-avatar"><a href="https://jureaky.github.io" target="_blank"><img alt="from NULL, to ALL" src="/images/avatar.png"></a></div>
+    <div class="author-info">
+        <div class="name"><a href="https://jureaky.github.io" target="_blank"></a></div>
+        <div class="number-posts">from NULL, to ALL</span></div>
+    </div>
+</div><div class="post-tags"><a href="/tags/kubernetes/" class="tag">Kubernetes</a></div></div>
+                </footer></div>
+        <div id="toc-final"></div>
+        </div>
+
+    
+    </article>
+    <section class="page single comments content-block-position">
+        <h1 class="display-hidden">Комментарии</h1><div id="comments"><div id="utterances"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
+            </noscript></div></section></div>
+
+</main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.83.1">Hugo</a> | Theme - <a href="https://ublogger.netlify.app/?utm_source=https://jureaky.github.io/&utm_medium=footer&utm_campaign=config&utm_term=2.0.1" target="_blank" title="uBlogger 2.0.1">uBlogger</a>
+                </div><div class="footer-line"><i class="svg-icon icon-copyright"></i><span>2020 - 2021</span><span class="author">&nbsp;<a href="https://jureaky.github.io" target="_blank">jureaky</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
 
-        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
-                <i class="fas fa-arrow-up fa-fw"></i>
+        <aside id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="svg-icon icon-arrow-up"></i>
             </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
-                <i class="fas fa-comment fa-fw"></i>
+                <i class="svg-icon icon-comments-fixed"></i>
             </a>
-        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script type="text/javascript">
-    window.config = {"code":{"copyTitle":"Copy to clipboard","maxShownLines":30},"comment":{},"headerMode":{"desktop":"fixed","mobile":"auto"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"lunrIndexURL":"/index.json","noResultsFound":"No results found","type":"lunr"},"twemoji":true};
-</script><script type="text/javascript" src="https://polyfill.io/v3/polyfill.min.js?features=Element.prototype.closest%2CrequestAnimationFrame%2CCustomEvent%2CPromise%2CObject.entries%2CObject.assign%2CObject.values%2Cfetch%2CElement.prototype.after%2CArray.prototype.fill%2CIntersectionObserver%2CArray.from%2CArray.prototype.find%2CMath.sign"></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/twemoji/twemoji.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+        </aside><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script src="/lib/autocomplete/autocomplete.min.js"></script><script src="/lib/lunr/lunr.min.js"></script><script src="/lib/twemoji/twemoji.min.js"></script><script src="/lib/clipboard/clipboard.min.js"></script><script src="/lib/sharer/sharer.min.js"></script><script src="/lib/katex/katex.min.js"></script><script src="/lib/katex/auto-render.min.js"></script><script src="/lib/katex/copy-tex.min.js"></script><script src="/lib/katex/mhchem.min.js"></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":30},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"","lightTheme":"github-light","repo":"jureaky/blog-comments"}},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":null,"type":"lunr"},"twemoji":true};</script><script src="/js/theme.min.js"></script></body>
 </html>

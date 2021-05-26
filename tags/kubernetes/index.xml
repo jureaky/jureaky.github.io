@@ -1,15 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Kubernetes | Tag | Teclip by Jureaky</title>
+        <title>Kubernetes - Tag - Teclip by Jureaky</title>
         <link>https://jureaky.github.io/tags/kubernetes/</link>
-        <description>Kubernetes | Tag | Teclip by Jureaky</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>jureaky@gmail.com (jureaky)</managingEditor>
-            <webMaster>jureaky@gmail.com (jureaky)</webMaster><lastBuildDate>Thu, 24 Dec 2020 16:25:20 &#43;0900</lastBuildDate><atom:link href="https://jureaky.github.io/tags/kubernetes/" rel="self" type="application/rss+xml" /><item>
-                <title>Kubernetes Architecture - What and Why</title>
-                <link>https://jureaky.github.io/kubernetes-architecture-what-and-why/</link>
-                <pubDate>Thu, 24 Dec 2020 16:25:20 &#43;0900</pubDate>
-                <author>jureaky</author>
-                <guid>https://jureaky.github.io/kubernetes-architecture-what-and-why/</guid>
-                <description>Kubernetes Architecture and Design Principles Behind It.</description>
-            </item></channel>
+        <description>Kubernetes - Tag - Teclip by Jureaky</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 24 Dec 2020 16:25:20 &#43;0900</lastBuildDate><atom:link href="https://jureaky.github.io/tags/kubernetes/" rel="self" type="application/rss+xml" /><item>
+    <title>Kubernetes Architecture - What and Why</title>
+    <link>https://jureaky.github.io/kubernetes-architecture-what-and-why/</link>
+    <pubDate>Thu, 24 Dec 2020 16:25:20 &#43;0900</pubDate>
+    <author>jureaky</author>
+    <guid>https://jureaky.github.io/kubernetes-architecture-what-and-why/</guid>
+    <description><![CDATA[Kubernetes Architecture and Design Principles Behind It.]]></description>
+</item></channel>
 </rss>
