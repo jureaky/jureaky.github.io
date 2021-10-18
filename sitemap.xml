@@ -2,13 +2,17 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://jureaky.github.io/categories/</loc><lastmod>2020-12-24T16:25:20&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://jureaky.github.io/design-patterns-builder-pattern/</loc><lastmod>2021-10-18T21:39:03&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://jureaky.github.io/tags/builder-pattern/</loc><lastmod>2021-10-18T21:39:03&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://jureaky.github.io/categories/</loc><lastmod>2021-10-18T21:39:03&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://jureaky.github.io/tags/design-patterns/</loc><lastmod>2021-10-18T21:39:03&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://jureaky.github.io/categories/design-patterns/</loc><lastmod>2021-10-18T21:39:03&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://jureaky.github.io/posts/</loc><lastmod>2021-10-18T21:39:03&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://jureaky.github.io/tags/</loc><lastmod>2021-10-18T21:39:03&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://jureaky.github.io/</loc><lastmod>2021-10-18T21:39:03&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://jureaky.github.io/categories/container/</loc><lastmod>2020-12-24T16:25:20&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://jureaky.github.io/tags/kubernetes/</loc><lastmod>2020-12-24T16:25:20&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://jureaky.github.io/kubernetes-architecture-what-and-why/</loc><lastmod>2020-12-24T16:25:20&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://jureaky.github.io/posts/</loc><lastmod>2020-12-24T16:25:20&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://jureaky.github.io/tags/</loc><lastmod>2020-12-24T16:25:20&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://jureaky.github.io/</loc><lastmod>2020-12-24T16:25:20&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://jureaky.github.io/go-short-variable-declaratioin/</loc><lastmod>2020-07-19T17:21:16&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://jureaky.github.io/tags/go/</loc><lastmod>2020-07-19T17:21:16&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://jureaky.github.io/categories/lang/</loc><lastmod>2020-07-19T17:21:16&#43;09:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>

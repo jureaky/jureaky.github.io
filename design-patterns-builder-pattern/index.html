@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noodp"/><title>[Design Patterns] Builder Pattern | </title><meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://jureaky.github.io/design-patterns-builder-pattern/images/featured-img.jpeg"/>
+<meta name="twitter:title" content="[Design Patterns] Builder Pattern"/>
+<meta name="twitter:description" content=""/><meta name="Description" content="Tech Clips"><meta property="og:title" content="[Design Patterns] Builder Pattern" />
+<meta property="og:description" content="Short note about Builder Pattern" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jureaky.github.io/design-patterns-builder-pattern/" /><meta property="og:image" content="https://jureaky.github.io/design-patterns-builder-pattern/images/featured-img.jpeg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-10-18T21:39:03&#43;09:00" />
+<meta property="article:modified_time" content="2021-10-18T21:39:03&#43;09:00" />
+
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
+        <link rel="icon" type="image/png" sizes="512x512" href="/android-chrome-512x512.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://jureaky.github.io/design-patterns-builder-pattern/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "[Design Patterns] Builder Pattern",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/jureaky.github.io\/design-patterns-builder-pattern\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/jureaky.github.io\/design-patterns-builder-pattern\/images\/featured-img.jpeg",
+                            "width":  1920 ,
+                            "height":  1080 
+                        }],"genre": "posts","keywords": "Design Patterns, Builder Pattern","wordCount":  558 ,
+        "url": "https:\/\/jureaky.github.io\/design-patterns-builder-pattern\/","datePublished": "2021-10-18T21:39:03+09:00","dateModified": "2021-10-18T21:39:03+09:00",
+        "publisher": {
+            "@type": "Person",
+            "name": "", "image": [
+            {
+            "@type": "ImageObject",
+            "url": "\/images\/avatar.png"
+            }
+            ]},"author": {
+                "@type": "Person",
+                "name": ""
+            },"description": ""
+    }
+    </script><script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https:\/\/jureaky.github.io\/"
+        },{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Design Patterns",
+            "item": "https://jureaky.github.io/categories/design-patterns/"
+        },{
+                "@type": "ListItem",
+                "position": 3,
+                "name": "[Design Patterns] Builder Pattern"
+            }]
+    }
+</script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header>
+    <div class="desktop header" id="header-desktop">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Teclip by Jureaky" class="header-logo logo-svg">Teclip by Jureaky</a>
+            </div>
+            <div class="menu">
+                <nav>
+                    <h2 class="display-hidden">Основная навигация</h2>
+                    <ul class="menu-inner"><li>
+                            <a class="menu-item" href="/posts/"> Posts </a>
+                        </li><li>
+                            <a class="menu-item" href="/tags/"> Tags </a>
+                        </li><li>
+                            <a class="menu-item" href="/categories/"> Categories </a>
+                        </li></ul>
+                </nav><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <span class="svg-icon icon-search"></span>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <span class="svg-icon icon-cancel"></span>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <span class="svg-icon icon-loading"></span>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <span class="svg-icon icon-moon"></span>
+                </a>
+            </div>
+        </div>
+    </div><div class="mobile header" id="header-mobile">
+        <div class="header-container">
+            <div class="header-wrapper">
+                <div class="header-title">
+                    <a href="/" title="Teclip by Jureaky" class="header-logo">Teclip by Jureaky</a>
+                </div>
+                <div class="menu-toggle" id="menu-toggle-mobile">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+            <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                        <div class="search mobile" id="search-mobile">
+                            <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                            <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                                <span class="svg-icon icon-search"></span>
+                            </a>
+                            <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                                <span class="svg-icon icon-cancel"></span>
+                            </a>
+                            <span class="search-button search-loading" id="search-loading-mobile">
+                                <span class="svg-icon icon-loading"></span>
+                            </span>
+                        </div>
+                        <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                            Cancel
+                        </a>
+                    </div><nav>
+                    <h2 class="display-hidden">Основная навигация</h2>
+                    <ul><li>
+                            <a class="menu-item" href="/posts/" title="">Posts</a>
+                        </li><li>
+                            <a class="menu-item" href="/tags/" title="">Tags</a>
+                        </li><li>
+                            <a class="menu-item" href="/categories/" title="">Categories</a>
+                        </li></ul>
+                </nav>
+                <a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <span class="svg-icon icon-moon"></span>
+                </a></div>
+        </div>
+    </div><div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div></header><main class="main">
+<div class="container content-article  theme-full"><div class="toc" id="toc-auto">
+            <div class="toc-title">Contents</div>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div>
+    
+
+    
+    
+    <article>
+    
+
+        <header class="header-post">
+
+            
+
+            
+            <div class="featured-image" style="background-image: url('https://jureaky.github.io/design-patterns-builder-pattern/images/featured-img_hu4b9143bc9488af2143a5c305e500d0e3_216913_1600x0_resize_q100_box.jpeg');"><div class="post-title">
+
+                    <div class="post-all-meta">
+                        <nav class="breadcrumbs">
+    <ol>
+        <li><a href="/">Home </a></li><li><a href="/categories/design-patterns/">Design Patterns </a></li><li>[Design Patterns] Builder Pattern</li>
+    </ol>
+</nav>
+                        <h1 class="single-title flipInX">[Design Patterns] Builder Pattern</h1><div class="post-meta summary-post-meta"><span class="post-category meta-item">
+                                <a href="/categories/design-patterns/"><span class="svg-icon icon-folder"></span>Design Patterns</a>
+                            </span><span class="post-meta-date meta-item">
+                                <span class="svg-icon icon-clock"></span><time class="timeago" datetime="2021-10-18">2021-10-18</time>
+                            </span><span class="post-meta-words meta-item">
+                                <span class="svg-icon icon-pencil"></span>558 words
+                            </span>
+                            <span class="post-meta-reading meta-item">
+                                <span class="svg-icon icon-stopwatch"></span>3 minutes
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                </div></header>
+
+        <div class="article-post toc-start">
+
+            <div class="content-block content-block-first content-block-position">
+
+                <div class="post single"><div class="details toc" id="toc-static"  data-kept="">
+                        <div class="details-summary toc-title">
+                            <span>Contents</span>
+                        </div>
+                        <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-builder-pattern">1. Builder Pattern</a></li>
+    <li><a href="#2-benefits-of-using-builder-pattern">2. Benefits of using Builder Pattern</a></li>
+    <li><a href="#3-use-of-builder-pattern">3. Use of Builder Pattern</a></li>
+  </ul>
+</nav></div>
+                    </div><h2 id="1-builder-pattern" class="headerLink"><a href="#1-builder-pattern" class="header-mark"></a>1. Builder Pattern</h2><p>Builder Pattern is used to create objects, especially when they are rather complex.
+We can create objects using so-called <strong>Builder Class</strong>, rather than using constructors. And it&rsquo;s preferred way.</p>
+<h2 id="2-benefits-of-using-builder-pattern" class="headerLink"><a href="#2-benefits-of-using-builder-pattern" class="header-mark"></a>2. Benefits of using Builder Pattern</h2><ol>
+<li>Provides a consistent, but flexible way of constructing objects</li>
+</ol>
+<p>I usually type in only name and phone number when adding a new friend to my phone address book.
+However, there are lots of other fields, which I rarely notice that they even existed while some people might intensely fill most of the fields.</p>
+<p>Class representation of a profile might be like below.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Profile</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">phone</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">Group</span> <span class="n">group</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">Address</span> <span class="n">addr</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">email</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">memo</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>How to handle all those different combination of inputs? 😕</p>
+<ul>
+<li>1st Try: Make every possible constructor</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="nf">Profile</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">,</span> <span class="n">String</span> <span class="n">phone</span><span class="o">);</span>
+<span class="kd">public</span> <span class="nf">Profile</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">,</span> <span class="n">String</span> <span class="n">phone</span><span class="o">,</span> <span class="n">Group</span> <span class="n">group</span><span class="o">);</span>
+<span class="cm">/* ... a lot of constructors ... */</span>
+<span class="kd">public</span> <span class="nf">Profile</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">,</span> <span class="n">String</span> <span class="n">phone</span><span class="o">,</span> <span class="n">Address</span> <span class="n">addr</span><span class="o">,</span> <span class="n">String</span> <span class="n">memo</span><span class="o">);</span>
+<span class="cm">/* ... a lot of constructors ... */</span>
+<span class="kd">public</span> <span class="nf">Profile</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">,</span> <span class="n">String</span> <span class="n">phone</span><span class="o">,</span> <span class="n">Group</span> <span class="n">group</span><span class="o">,</span> <span class="n">Address</span> <span class="n">addr</span><span class="o">,</span> <span class="n">String</span> <span class="n">email</span><span class="o">,</span> <span class="n">String</span> <span class="n">memo</span><span class="o">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>How many constructors do we need? =&gt; $ 2 ^ \text{number of fields} $ !!</p>
+<p>This is crazy&hellip; And what if we have a class with so many fileds with the same type?? Definitely looks buggy.</p>
+<ul>
+<li>2nd Try: A single constructor with all fields, then use default/null value</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Profile</span> <span class="n">profile</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Profile</span><span class="o">(</span><span class="s">&#34;John&#34;</span><span class="o">,</span> <span class="s">&#34;1234567&#34;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>This code looks so ugly. And it&rsquo;s likely to misplace values to wrong positions. Not good either.</p>
+<p>This is where Builder Pattern comes in.</p>
+<h2 id="3-use-of-builder-pattern" class="headerLink"><a href="#3-use-of-builder-pattern" class="header-mark"></a>3. Use of Builder Pattern</h2><p>Here is the implementation.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Profile</span> <span class="o">{</span>
+    <span class="cm">/* ... fields ... */</span>
+
+    <span class="c1">// Private Constructor
+</span><span class="c1"></span>    <span class="c1">// Take as input Builder object
+</span><span class="c1"></span>    <span class="kd">private</span> <span class="nf">Profile</span><span class="o">(</span><span class="n">Builder</span> <span class="n">builder</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="na">name</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">phone</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="na">phone</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">group</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="na">group</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">addr</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="na">addr</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">email</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="na">email</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">memo</span> <span class="o">=</span> <span class="n">builder</span><span class="o">.</span><span class="na">memo</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="c1">// Builder Class
+</span><span class="c1"></span>    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">Builder</span> <span class="o">{</span>
+        <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="o">;</span>
+        <span class="kd">private</span> <span class="n">String</span> <span class="n">phone</span><span class="o">;</span>
+        <span class="kd">private</span> <span class="n">Group</span> <span class="n">group</span><span class="o">;</span>
+        <span class="kd">private</span> <span class="n">Address</span> <span class="n">addr</span><span class="o">;</span>
+        <span class="kd">private</span> <span class="n">String</span> <span class="n">email</span><span class="o">;</span>
+        <span class="kd">private</span> <span class="n">String</span> <span class="n">memo</span><span class="o">;</span>
+
+        <span class="c1">// Constructor with Mandatory parameters
+</span><span class="c1"></span>        <span class="kd">public</span> <span class="nf">Builder</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">,</span> <span class="n">String</span> <span class="n">phone</span><span class="o">);</span>
+
+        <span class="c1">// Methods to Set Optional Fields
+</span><span class="c1"></span>        <span class="c1">// Notice that all these methods return &#39;this(Builder)&#39;
+</span><span class="c1"></span>
+        <span class="kd">public</span> <span class="n">Builder</span> <span class="nf">group</span><span class="o">(</span><span class="n">Group</span> <span class="n">group</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">group</span> <span class="o">=</span> <span class="n">group</span><span class="o">;</span>
+            <span class="k">return</span> <span class="k">this</span><span class="o">;</span>
+        <span class="o">}</span>
+
+        <span class="kd">public</span> <span class="n">Builder</span> <span class="nf">addr</span><span class="o">(</span><span class="n">Address</span> <span class="n">addr</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">addr</span> <span class="o">=</span> <span class="n">addr</span><span class="o">;</span>
+            <span class="k">return</span> <span class="k">this</span><span class="o">;</span>
+        <span class="o">}</span>
+
+        <span class="kd">public</span> <span class="n">Builder</span> <span class="nf">email</span><span class="o">(</span><span class="n">String</span> <span class="n">email</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">email</span> <span class="o">=</span> <span class="n">email</span><span class="o">;</span>
+            <span class="k">return</span> <span class="k">this</span><span class="o">;</span>
+        <span class="o">}</span>
+
+        <span class="kd">public</span> <span class="n">Builder</span> <span class="nf">memo</span><span class="o">(</span><span class="n">String</span> <span class="n">memo</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">memo</span> <span class="o">=</span> <span class="n">memo</span><span class="o">;</span>
+            <span class="k">return</span> <span class="k">this</span><span class="o">;</span>
+        <span class="o">}</span>
+
+        <span class="c1">// Construct a Profile object
+</span><span class="c1"></span>        <span class="kd">public</span> <span class="n">Profile</span> <span class="nf">build</span><span class="o">()</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="k">new</span> <span class="n">Profile</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Client code looks like:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">Profile</span> <span class="n">p1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Profile</span><span class="o">.</span><span class="na">Builder</span><span class="o">(</span><span class="s">&#34;Kim&#34;</span><span class="o">,</span> <span class="s">&#34;123456&#34;</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">email</span><span class="o">(</span><span class="s">&#34;kim@email.com&#34;</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">buld</span><span class="o">();</span>
+
+<span class="n">Profile</span> <span class="n">p2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Profile</span><span class="o">.</span><span class="na">Builder</span><span class="o">(</span><span class="s">&#34;Park&#34;</span><span class="o">,</span> <span class="s">&#34;7777777&#34;</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">memo</span><span class="o">(</span><span class="s">&#34;Genius man&#34;</span><span class="o">)</span>
+                <span class="o">.</span><span class="na">build</span><span class="o">();</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Code looks much cleaner and coherent now. 😄</p>
+<p>👉 <strong>Thank you for reading my post !</strong> 🙏</p>
+<p>👉 Please leave a comment if you have any ideas to share ! 🎶</p>
+</div><footer>
+                        <div class="post">
+
+
+<div class="post-share"><div class="share-link">
+        <a class="share-icon share-twitter" href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://jureaky.github.io/design-patterns-builder-pattern/" data-title="[Design Patterns] Builder Pattern" data-hashtags="Design Patterns,Builder Pattern"><span class="svg-social-icon icon-twitter"></span></a>
+    </div><div class="share-link">
+        <a class="share-icon share-facebook" href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://jureaky.github.io/design-patterns-builder-pattern/" data-hashtag="Design Patterns"><span class="svg-social-icon icon-facebook"></span></a>
+    </div><div class="share-link">
+        <a class="share-icon share-linkedin" href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://jureaky.github.io/design-patterns-builder-pattern/"><span class="svg-social-icon icon-linkedin"></span></a>
+    </div></div>
+
+<div class="footer-post-author">
+    <div class="author-avatar"><a href="https://jureaky.github.io" target="_blank"><img alt="from NULL, to ALL" src="/images/avatar.png"></a></div>
+    <div class="author-info">
+        <div class="name"><a href="https://jureaky.github.io" target="_blank"></a></div>
+        <div class="number-posts">from NULL, to ALL</span></div>
+    </div>
+</div><div class="post-tags"><a href="/tags/design-patterns/" class="tag">Design Patterns</a><a href="/tags/builder-pattern/" class="tag">Builder Pattern</a></div></div>
+                </footer></div>
+        <div id="toc-final"></div>
+        </div>
+
+    
+    </article>
+    <section class="page single comments content-block-position">
+        <h1 class="display-hidden">Комментарии</h1><div id="comments"><div id="utterances"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
+            </noscript></div></section></div>
+
+</main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.83.1">Hugo</a> | Theme - <a href="https://ublogger.netlify.app/?utm_source=https://jureaky.github.io/&utm_medium=footer&utm_campaign=config&utm_term=2.0.1" target="_blank" title="uBlogger 2.0.1">uBlogger</a>
+                </div><div class="footer-line"><i class="svg-icon icon-copyright"></i><span>2020 - 2021</span><span class="author">&nbsp;<a href="https://jureaky.github.io" target="_blank">jureaky</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <aside id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="svg-icon icon-arrow-up"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="svg-icon icon-comments-fixed"></i>
+            </a>
+        </aside><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script src="/lib/autocomplete/autocomplete.min.js"></script><script src="/lib/lunr/lunr.min.js"></script><script src="/lib/twemoji/twemoji.min.js"></script><script src="/lib/clipboard/clipboard.min.js"></script><script src="/lib/sharer/sharer.min.js"></script><script src="/lib/katex/katex.min.js"></script><script src="/lib/katex/auto-render.min.js"></script><script src="/lib/katex/copy-tex.min.js"></script><script src="/lib/katex/mhchem.min.js"></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":30},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"","lightTheme":"github-light","repo":"jureaky/blog-comments"}},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":null,"type":"lunr"},"twemoji":true};</script><script src="/js/theme.min.js"></script></body>
+</html>
