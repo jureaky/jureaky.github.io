@@ -1,14 +1,23 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>Hugo - Tag - Teclip by Jureaky</title>
-        <link>https://jureaky.github.io/tags/hugo/</link>
-        <description>Hugo - Tag - Teclip by Jureaky</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 30 Apr 2020 21:15:39 &#43;0900</lastBuildDate><atom:link href="https://jureaky.github.io/tags/hugo/" rel="self" type="application/rss+xml" /><item>
-    <title>Create a Github Blog With Hugo</title>
-    <link>https://jureaky.github.io/create-a-github-blog-with-hugo/</link>
-    <pubDate>Thu, 30 Apr 2020 21:15:39 &#43;0900</pubDate>
-    <author>jureaky</author>
-    <guid>https://jureaky.github.io/create-a-github-blog-with-hugo/</guid>
-    <description><![CDATA[Figure out How I created this blog using Hugo.]]></description>
-</item></channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Hugo on Clips</title>
+    <link>https://jureaky.github.io/tags/hugo/</link>
+    <description>Recent content in Hugo on Clips</description>
+    <image>
+      <url>https://jureaky.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://jureaky.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 30 Apr 2020 21:15:39 +0900</lastBuildDate><atom:link href="https://jureaky.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Create a Github Blog With Hugo</title>
+      <link>https://jureaky.github.io/posts/create-a-github-blog-with-hugo/</link>
+      <pubDate>Thu, 30 Apr 2020 21:15:39 +0900</pubDate>
+      
+      <guid>https://jureaky.github.io/posts/create-a-github-blog-with-hugo/</guid>
+      <description>Figure out How I created this blog using Hugo.</description>
+    </item>
+    
+  </channel>
 </rss>

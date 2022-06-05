@@ -1,42 +1,68 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>All Posts - Teclip by Jureaky</title>
-        <link>https://jureaky.github.io/posts/</link>
-        <description>All Posts | Teclip by Jureaky</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 18 Oct 2021 21:39:03 &#43;0900</lastBuildDate><atom:link href="https://jureaky.github.io/posts/" rel="self" type="application/rss+xml" /><item>
-    <title>[Design Patterns] Builder Pattern</title>
-    <link>https://jureaky.github.io/design-patterns-builder-pattern/</link>
-    <pubDate>Mon, 18 Oct 2021 21:39:03 &#43;0900</pubDate>
-    <author>jureaky</author>
-    <guid>https://jureaky.github.io/design-patterns-builder-pattern/</guid>
-    <description><![CDATA[Short note about Builder Pattern]]></description>
-</item><item>
-    <title>Kubernetes Architecture - What and Why</title>
-    <link>https://jureaky.github.io/kubernetes-architecture-what-and-why/</link>
-    <pubDate>Thu, 24 Dec 2020 16:25:20 &#43;0900</pubDate>
-    <author>jureaky</author>
-    <guid>https://jureaky.github.io/kubernetes-architecture-what-and-why/</guid>
-    <description><![CDATA[Kubernetes Architecture and Design Principles Behind It.]]></description>
-</item><item>
-    <title>[Go] Short Variable Declaration</title>
-    <link>https://jureaky.github.io/go-short-variable-declaratioin/</link>
-    <pubDate>Sun, 19 Jul 2020 17:21:16 &#43;0900</pubDate>
-    <author>jureaky</author>
-    <guid>https://jureaky.github.io/go-short-variable-declaratioin/</guid>
-    <description><![CDATA[How short variable declaration is used in Go.]]></description>
-</item><item>
-    <title>References in C&#43;&#43;</title>
-    <link>https://jureaky.github.io/references-in-cplusplus/</link>
-    <pubDate>Wed, 06 May 2020 02:45:20 &#43;0900</pubDate>
-    <author>jureaky</author>
-    <guid>https://jureaky.github.io/references-in-cplusplus/</guid>
-    <description><![CDATA[What is a reference(&amp;) in C++?]]></description>
-</item><item>
-    <title>Create a Github Blog With Hugo</title>
-    <link>https://jureaky.github.io/create-a-github-blog-with-hugo/</link>
-    <pubDate>Thu, 30 Apr 2020 21:15:39 &#43;0900</pubDate>
-    <author>jureaky</author>
-    <guid>https://jureaky.github.io/create-a-github-blog-with-hugo/</guid>
-    <description><![CDATA[Figure out How I created this blog using Hugo.]]></description>
-</item></channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Posts on Clips</title>
+    <link>https://jureaky.github.io/posts/</link>
+    <description>Recent content in Posts on Clips</description>
+    <image>
+      <url>https://jureaky.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://jureaky.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 30 May 2022 13:39:19 +0900</lastBuildDate><atom:link href="https://jureaky.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[C] Read String With fgets() and sscanf() instead of scanf()</title>
+      <link>https://jureaky.github.io/posts/c-safe-read-string-with-fgets-and-sscanf/</link>
+      <pubDate>Mon, 30 May 2022 13:39:19 +0900</pubDate>
+      
+      <guid>https://jureaky.github.io/posts/c-safe-read-string-with-fgets-and-sscanf/</guid>
+      <description>How to safely read strings in C ?</description>
+    </item>
+    
+    <item>
+      <title>[Design Patterns] Builder Pattern</title>
+      <link>https://jureaky.github.io/posts/design-patterns-builder-pattern/</link>
+      <pubDate>Mon, 18 Oct 2021 21:39:03 +0900</pubDate>
+      
+      <guid>https://jureaky.github.io/posts/design-patterns-builder-pattern/</guid>
+      <description>Short note about Builder Pattern</description>
+    </item>
+    
+    <item>
+      <title>Kubernetes Architecture - What and Why</title>
+      <link>https://jureaky.github.io/posts/kubernetes-architecture-what-and-why/</link>
+      <pubDate>Thu, 24 Dec 2020 16:25:20 +0900</pubDate>
+      
+      <guid>https://jureaky.github.io/posts/kubernetes-architecture-what-and-why/</guid>
+      <description>Kubernetes Architecture and Design Principles Behind It.</description>
+    </item>
+    
+    <item>
+      <title>[Go] Short Variable Declaration</title>
+      <link>https://jureaky.github.io/posts/go-short-variable-declaratioin/</link>
+      <pubDate>Sun, 19 Jul 2020 17:21:16 +0900</pubDate>
+      
+      <guid>https://jureaky.github.io/posts/go-short-variable-declaratioin/</guid>
+      <description>How short variable declaration is used in Go.</description>
+    </item>
+    
+    <item>
+      <title>References in C&#43;&#43;</title>
+      <link>https://jureaky.github.io/posts/references-in-cplusplus/</link>
+      <pubDate>Wed, 06 May 2020 02:45:20 +0900</pubDate>
+      
+      <guid>https://jureaky.github.io/posts/references-in-cplusplus/</guid>
+      <description>What is a reference(&amp;amp;) in C++?</description>
+    </item>
+    
+    <item>
+      <title>Create a Github Blog With Hugo</title>
+      <link>https://jureaky.github.io/posts/create-a-github-blog-with-hugo/</link>
+      <pubDate>Thu, 30 Apr 2020 21:15:39 +0900</pubDate>
+      
+      <guid>https://jureaky.github.io/posts/create-a-github-blog-with-hugo/</guid>
+      <description>Figure out How I created this blog using Hugo.</description>
+    </item>
+    
+  </channel>
 </rss>

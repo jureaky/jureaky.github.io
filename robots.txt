@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://jureaky.github.io/sitemap.xml

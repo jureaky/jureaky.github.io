@@ -1,21 +1,41 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>Lang - Category - Teclip by Jureaky</title>
-        <link>https://jureaky.github.io/categories/lang/</link>
-        <description>Lang - Category - Teclip by Jureaky</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 19 Jul 2020 17:21:16 &#43;0900</lastBuildDate><atom:link href="https://jureaky.github.io/categories/lang/" rel="self" type="application/rss+xml" /><item>
-    <title>[Go] Short Variable Declaration</title>
-    <link>https://jureaky.github.io/go-short-variable-declaratioin/</link>
-    <pubDate>Sun, 19 Jul 2020 17:21:16 &#43;0900</pubDate>
-    <author>jureaky</author>
-    <guid>https://jureaky.github.io/go-short-variable-declaratioin/</guid>
-    <description><![CDATA[How short variable declaration is used in Go.]]></description>
-</item><item>
-    <title>References in C&#43;&#43;</title>
-    <link>https://jureaky.github.io/references-in-cplusplus/</link>
-    <pubDate>Wed, 06 May 2020 02:45:20 &#43;0900</pubDate>
-    <author>jureaky</author>
-    <guid>https://jureaky.github.io/references-in-cplusplus/</guid>
-    <description><![CDATA[What is a reference(&amp;) in C++?]]></description>
-</item></channel>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Lang on Clips</title>
+    <link>https://jureaky.github.io/categories/lang/</link>
+    <description>Recent content in Lang on Clips</description>
+    <image>
+      <url>https://jureaky.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://jureaky.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 30 May 2022 13:39:19 +0900</lastBuildDate><atom:link href="https://jureaky.github.io/categories/lang/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[C] Read String With fgets() and sscanf() instead of scanf()</title>
+      <link>https://jureaky.github.io/posts/c-safe-read-string-with-fgets-and-sscanf/</link>
+      <pubDate>Mon, 30 May 2022 13:39:19 +0900</pubDate>
+      
+      <guid>https://jureaky.github.io/posts/c-safe-read-string-with-fgets-and-sscanf/</guid>
+      <description>How to safely read strings in C ?</description>
+    </item>
+    
+    <item>
+      <title>[Go] Short Variable Declaration</title>
+      <link>https://jureaky.github.io/posts/go-short-variable-declaratioin/</link>
+      <pubDate>Sun, 19 Jul 2020 17:21:16 +0900</pubDate>
+      
+      <guid>https://jureaky.github.io/posts/go-short-variable-declaratioin/</guid>
+      <description>How short variable declaration is used in Go.</description>
+    </item>
+    
+    <item>
+      <title>References in C&#43;&#43;</title>
+      <link>https://jureaky.github.io/posts/references-in-cplusplus/</link>
+      <pubDate>Wed, 06 May 2020 02:45:20 +0900</pubDate>
+      
+      <guid>https://jureaky.github.io/posts/references-in-cplusplus/</guid>
+      <description>What is a reference(&amp;amp;) in C++?</description>
+    </item>
+    
+  </channel>
 </rss>
